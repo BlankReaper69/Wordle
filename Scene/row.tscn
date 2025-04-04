@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://c02d4qbanv7tk"]
+
+[ext_resource type="PackedScene" uid="uid://stb6cxqvsi84" path="res://Scene/letter_tile.tscn" id="1_dmejs"]
+
+[node name="Row" type="HBoxContainer"]
+offset_right = 216.0
+offset_bottom = 40.0
+
+[node name="LetterTile" parent="." instance=ExtResource("1_dmejs")]
+layout_mode = 2
+
+[node name="LetterTile2" parent="." instance=ExtResource("1_dmejs")]
+layout_mode = 2
+
+[node name="LetterTile3" parent="." instance=ExtResource("1_dmejs")]
+layout_mode = 2
+
+[node name="LetterTile4" parent="." instance=ExtResource("1_dmejs")]
+layout_mode = 2
+
+[node name="LetterTile5" parent="." instance=ExtResource("1_dmejs")]
+layout_mode = 2

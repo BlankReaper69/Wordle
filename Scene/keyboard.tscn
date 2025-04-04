@@ -1,0 +1,187 @@
+[gd_scene load_steps=4 format=3 uid="uid://bu1srw2icjtdg"]
+
+[ext_resource type="Script" path="res://Script/keyboard.gd" id="1_dclft"]
+[ext_resource type="PackedScene" uid="uid://h3hfmaamd5te" path="res://Scene/keyboard_button.tscn" id="1_e6r68"]
+[ext_resource type="PackedScene" uid="uid://cwn2gh161hx4m" path="res://Scene/SpecialButton.tscn" id="2_y51ea"]
+
+[node name="Keyboard" type="VBoxContainer"]
+offset_right = 493.0
+offset_bottom = 182.0
+alignment = 1
+script = ExtResource("1_dclft")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Q" parent="HBoxContainer" groups=["keyboard"] instance=ExtResource("1_e6r68")]
+layout_mode = 2
+text = "Q"
+letter = "q"
+
+[node name="W" parent="HBoxContainer" groups=["keyboard"] instance=ExtResource("1_e6r68")]
+layout_mode = 2
+text = "W"
+letter = "w"
+
+[node name="E" parent="HBoxContainer" groups=["keyboard"] instance=ExtResource("1_e6r68")]
+layout_mode = 2
+text = "E"
+letter = "e"
+
+[node name="R" parent="HBoxContainer" groups=["keyboard"] instance=ExtResource("1_e6r68")]
+layout_mode = 2
+text = "R"
+letter = "r"
+
+[node name="T" parent="HBoxContainer" groups=["keyboard"] instance=ExtResource("1_e6r68")]
+layout_mode = 2
+text = "T"
+letter = "t"
+
+[node name="Y" parent="HBoxContainer" groups=["keyboard"] instance=ExtResource("1_e6r68")]
+layout_mode = 2
+text = "Y"
+letter = "y"
+
+[node name="U" parent="HBoxContainer" groups=["keyboard"] instance=ExtResource("1_e6r68")]
+layout_mode = 2
+text = "U"
+letter = "u"
+
+[node name="I" parent="HBoxContainer" groups=["keyboard"] instance=ExtResource("1_e6r68")]
+layout_mode = 2
+letter = "i"
+
+[node name="O" parent="HBoxContainer" groups=["keyboard"] instance=ExtResource("1_e6r68")]
+layout_mode = 2
+text = "O"
+letter = "o"
+
+[node name="P" parent="HBoxContainer" groups=["keyboard"] instance=ExtResource("1_e6r68")]
+layout_mode = 2
+text = "P"
+letter = "p"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="A" parent="HBoxContainer2" groups=["keyboard"] instance=ExtResource("1_e6r68")]
+layout_mode = 2
+
+[node name="S" parent="HBoxContainer2" groups=["keyboard"] instance=ExtResource("1_e6r68")]
+layout_mode = 2
+text = "S"
+letter = "s"
+
+[node name="D" parent="HBoxContainer2" groups=["keyboard"] instance=ExtResource("1_e6r68")]
+layout_mode = 2
+text = "D"
+letter = "d"
+
+[node name="F" parent="HBoxContainer2" groups=["keyboard"] instance=ExtResource("1_e6r68")]
+layout_mode = 2
+text = "F"
+letter = "f"
+
+[node name="G" parent="HBoxContainer2" groups=["keyboard"] instance=ExtResource("1_e6r68")]
+layout_mode = 2
+text = "G"
+letter = "g"
+
+[node name="H" parent="HBoxContainer2" groups=["keyboard"] instance=ExtResource("1_e6r68")]
+layout_mode = 2
+text = "H"
+letter = "h"
+
+[node name="J" parent="HBoxContainer2" groups=["keyboard"] instance=ExtResource("1_e6r68")]
+layout_mode = 2
+text = "J"
+letter = "j"
+
+[node name="K" parent="HBoxContainer2" groups=["keyboard"] instance=ExtResource("1_e6r68")]
+layout_mode = 2
+text = "K"
+letter = "k"
+
+[node name="L" parent="HBoxContainer2" groups=["keyboard"] instance=ExtResource("1_e6r68")]
+layout_mode = 2
+text = "L"
+letter = "l"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Enter" parent="HBoxContainer3" groups=["keyboard"] instance=ExtResource("2_y51ea")]
+layout_mode = 2
+text = "ENTER
+"
+
+[node name="Z" parent="HBoxContainer3" groups=["keyboard"] instance=ExtResource("1_e6r68")]
+layout_mode = 2
+text = "Z"
+letter = "z"
+
+[node name="X" parent="HBoxContainer3" groups=["keyboard"] instance=ExtResource("1_e6r68")]
+layout_mode = 2
+text = "X"
+letter = "x"
+
+[node name="C" parent="HBoxContainer3" groups=["keyboard"] instance=ExtResource("1_e6r68")]
+layout_mode = 2
+text = "C"
+letter = "c"
+
+[node name="V" parent="HBoxContainer3" groups=["keyboard"] instance=ExtResource("1_e6r68")]
+layout_mode = 2
+text = "V"
+
+[node name="B" parent="HBoxContainer3" groups=["keyboard"] instance=ExtResource("1_e6r68")]
+layout_mode = 2
+text = "B"
+letter = "b"
+
+[node name="N" parent="HBoxContainer3" groups=["keyboard"] instance=ExtResource("1_e6r68")]
+layout_mode = 2
+text = "N"
+letter = "n"
+
+[node name="M" parent="HBoxContainer3" groups=["keyboard"] instance=ExtResource("1_e6r68")]
+layout_mode = 2
+text = "M"
+letter = "m"
+
+[node name="Delete" type="Button" parent="HBoxContainer3" groups=["keyboard"]]
+layout_mode = 2
+text = "Delete
+"
+
+[connection signal="pressed" from="HBoxContainer/Q" to="." method="_on_keyboard_button_pressed" binds= ["q"]]
+[connection signal="pressed" from="HBoxContainer/W" to="." method="_on_keyboard_button_pressed" binds= ["w"]]
+[connection signal="pressed" from="HBoxContainer/E" to="." method="_on_keyboard_button_pressed" binds= ["e"]]
+[connection signal="pressed" from="HBoxContainer/R" to="." method="_on_keyboard_button_pressed" binds= ["r"]]
+[connection signal="pressed" from="HBoxContainer/T" to="." method="_on_keyboard_button_pressed" binds= ["t"]]
+[connection signal="pressed" from="HBoxContainer/Y" to="." method="_on_keyboard_button_pressed" binds= ["y"]]
+[connection signal="pressed" from="HBoxContainer/U" to="." method="_on_keyboard_button_pressed" binds= ["u"]]
+[connection signal="pressed" from="HBoxContainer/I" to="." method="_on_keyboard_button_pressed" binds= ["i"]]
+[connection signal="pressed" from="HBoxContainer/O" to="." method="_on_keyboard_button_pressed" binds= ["o"]]
+[connection signal="pressed" from="HBoxContainer/P" to="." method="_on_keyboard_button_pressed" binds= ["p"]]
+[connection signal="pressed" from="HBoxContainer2/A" to="." method="_on_keyboard_button_pressed" binds= ["a"]]
+[connection signal="pressed" from="HBoxContainer2/S" to="." method="_on_keyboard_button_pressed" binds= ["s"]]
+[connection signal="pressed" from="HBoxContainer2/D" to="." method="_on_keyboard_button_pressed" binds= ["d"]]
+[connection signal="pressed" from="HBoxContainer2/F" to="." method="_on_keyboard_button_pressed" binds= ["f"]]
+[connection signal="pressed" from="HBoxContainer2/G" to="." method="_on_keyboard_button_pressed" binds= ["g"]]
+[connection signal="pressed" from="HBoxContainer2/H" to="." method="_on_keyboard_button_pressed" binds= ["h"]]
+[connection signal="pressed" from="HBoxContainer2/J" to="." method="_on_keyboard_button_pressed" binds= ["j"]]
+[connection signal="pressed" from="HBoxContainer2/K" to="." method="_on_keyboard_button_pressed" binds= ["k"]]
+[connection signal="pressed" from="HBoxContainer2/L" to="." method="_on_keyboard_button_pressed" binds= ["l"]]
+[connection signal="pressed" from="HBoxContainer3/Enter" to="." method="_on_enter_pressed"]
+[connection signal="pressed" from="HBoxContainer3/Z" to="." method="_on_keyboard_button_pressed" binds= ["z"]]
+[connection signal="pressed" from="HBoxContainer3/X" to="." method="_on_keyboard_button_pressed" binds= ["x"]]
+[connection signal="pressed" from="HBoxContainer3/C" to="." method="_on_keyboard_button_pressed" binds= ["c"]]
+[connection signal="pressed" from="HBoxContainer3/V" to="." method="_on_keyboard_button_pressed" binds= ["v"]]
+[connection signal="pressed" from="HBoxContainer3/B" to="." method="_on_keyboard_button_pressed" binds= ["b"]]
+[connection signal="pressed" from="HBoxContainer3/N" to="." method="_on_keyboard_button_pressed" binds= ["n"]]
+[connection signal="pressed" from="HBoxContainer3/M" to="." method="_on_keyboard_button_pressed" binds= ["m"]]
+[connection signal="pressed" from="HBoxContainer3/Delete" to="." method="_on_backspace_button_pressed"]

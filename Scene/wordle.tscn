@@ -1,0 +1,67 @@
+[gd_scene load_steps=7 format=3 uid="uid://bxlaxcpt2h5fy"]
+
+[ext_resource type="PackedScene" uid="uid://c02d4qbanv7tk" path="res://Scene/row.tscn" id="1_70xmk"]
+[ext_resource type="Script" path="res://Script/rows.gd" id="1_182sv"]
+[ext_resource type="PackedScene" uid="uid://bu1srw2icjtdg" path="res://Scene/keyboard.tscn" id="2_oatfn"]
+[ext_resource type="PackedScene" uid="uid://vao0qo16e5ni" path="res://Scene/validation_alert.tscn" id="3_03wd3"]
+[ext_resource type="PackedScene" uid="uid://vlyiiwyufjvo" path="res://Scene/result_ui.tscn" id="4_il68t"]
+[ext_resource type="Script" path="res://Script/word_pool.gd" id="5_d056q"]
+
+[node name="Wordle" type="Node"]
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -233.0
+offset_top = -265.0
+offset_right = 233.0
+offset_bottom = 137.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Rows" type="VBoxContainer" parent="MarginContainer/VBoxContainer/CenterContainer"]
+layout_mode = 2
+script = ExtResource("1_182sv")
+
+[node name="Row" parent="MarginContainer/VBoxContainer/CenterContainer/Rows" instance=ExtResource("1_70xmk")]
+layout_mode = 2
+
+[node name="Row2" parent="MarginContainer/VBoxContainer/CenterContainer/Rows" instance=ExtResource("1_70xmk")]
+layout_mode = 2
+
+[node name="Row3" parent="MarginContainer/VBoxContainer/CenterContainer/Rows" instance=ExtResource("1_70xmk")]
+layout_mode = 2
+
+[node name="Row4" parent="MarginContainer/VBoxContainer/CenterContainer/Rows" instance=ExtResource("1_70xmk")]
+layout_mode = 2
+
+[node name="Row5" parent="MarginContainer/VBoxContainer/CenterContainer/Rows" instance=ExtResource("1_70xmk")]
+layout_mode = 2
+
+[node name="Keyboard" parent="MarginContainer/VBoxContainer" instance=ExtResource("2_oatfn")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Panel" parent="." instance=ExtResource("3_03wd3")]
+unique_name_in_owner = true
+
+[node name="ResultUI" parent="." instance=ExtResource("4_il68t")]
+unique_name_in_owner = true
+visible = false
+
+[node name="WordPool" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("5_d056q")
+
+[connection signal="backspace_pressed" from="MarginContainer/VBoxContainer/Keyboard" to="MarginContainer/VBoxContainer/CenterContainer/Rows" method="_on_keyboard_backspace_pressed"]
+[connection signal="enter_pressed" from="MarginContainer/VBoxContainer/Keyboard" to="MarginContainer/VBoxContainer/CenterContainer/Rows" method="_on_keyboard_enter_pressed"]
+[connection signal="letter_pressed" from="MarginContainer/VBoxContainer/Keyboard" to="MarginContainer/VBoxContainer/CenterContainer/Rows" method="_on_keyboard_letter_pressed"]
